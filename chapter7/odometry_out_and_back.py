@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-
+# @author : Bob Liao
 import rospy
 from geometry_msgs.msg import Twist,Point,Quaternion
 import tf
@@ -15,9 +15,11 @@ class OutAndBack() :
 		self.cmd_vel=rospy.Publisher('/cmd_vel',Twist)
 		rate=20
 		r=rospy.Rate(rate)
-		linear_speed=0.2
+		#linear_speed=0.2
+		linear_speed=0.15
 		goal_distance=1.0
-		angular_speed=1.0
+		#angular_speed=1.0
+		angular_speed=0.15
 		angular_tolerance=radians(2.5)
 		goal_angle=pi
 		self.tf_listener=tf.TransformListener()
